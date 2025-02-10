@@ -120,13 +120,19 @@
         </div>
     </div>
     <script>
-        function showContent(id) {
-            const sections = ['videoContainer', 'photoContainer', 'messageContainer', 'loveNotesContainer', 'piroposContainer'];
-            sections.forEach(section => {
-                document.getElementById(section).style.display = 'none';
-            });
-            document.getElementById(id).style.display = 'block';
+<script>
+    function showContent(id) {
+        console.log("Mostrando: ", id);  // Debugging
+        document.querySelectorAll('.content-box').forEach(box => box.style.display = 'none');
+        const element = document.getElementById(id);
+        if (element) {
+            element.style.display = 'block';
+        } else {
+            console.log("Elemento no encontrado:", id);
         }
+    }
+</script>
+
     </script>
 </body>
 </html>
