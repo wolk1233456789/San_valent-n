@@ -49,10 +49,6 @@
         .card button:hover {
             background-color: #a61d52;
         }
-        #videoContainer, #photoContainer, #messageContainer, #loveNotesContainer, #piroposContainer {
-            display: none;
-            margin-top: 15px;
-        }
         .content-box {
             background: #ffe6e6;
             padding: 15px;
@@ -62,6 +58,7 @@
             color: darkred;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
+            display: none; /* 🔴 Corrección: Ahora están ocultos por defecto */
         }
         .piropo-card h3 {
             color: #d6336c;
@@ -77,84 +74,72 @@
     <div class="card">
         <h1>💖 ¡Feliz San Valentín! 💖</h1>
         <p>Haz clic en los botones para ver tus sorpresas especiales.</p>
-        <img src="https://i.pinimg.com/736x/47/f4/33/47f4332432ed0d21c43e5e4e0f1061d5.jpg" alt="Foto Especial" id="profilePic">
+        <img src="https://i.pinimg.com/736x/47/f4/33/47f4332432ed0d21c43e5e4e0f1061d5.jpg" alt="Foto Especial">
         <br>
         
         <button onclick="showContent('photoContainer')">Ver Foto 📸</button>
         <button onclick="showContent('messageContainer')">Ver Mensaje 💌</button>
         <button onclick="showContent('loveNotesContainer')">Ver Cartitas 💕</button>
         <button onclick="showContent('piroposContainer')">Escuchar Piropos 😍</button>
-        
-        
+    </div>
+
+    <div id="photoContainer" class="content-box">
+        <img src="https://i.pinimg.com/736x/2d/1e/6b/2d1e6ba1586163743a3a4b0ef232c98d.jpg" alt="Foto Especial" style="width: 100%; border-radius: 10px;">
+    </div>
+
+    <div id="messageContainer" class="content-box">
+        <p>💌 "Eres la persona más especial en mi vida, gracias por cada momento juntos. ¡Te amo!" 💕</p>
+    </div>
+
+    <div id="loveNotesContainer" class="content-box">
+        <p>"Cada día a tu lado es un capítulo más de nuestra hermosa historia de amor."</p>
+        <p>"Si el amor tuviera un nombre, llevaría el tuyo."</p>
+        <p>"Tu sonrisa ilumina mis días más oscuros. ¡Eres mi sol!"</p>
+    </div>
+
+    <div id="piroposContainer" class="content-box">
+        <div class="piropo-card"><h3>🌹 Piropo 1</h3><p>"Si la belleza fuera tiempo, tú serías la eternidad."</p>
+            <audio controls>
+                <source src="ttsMP3.com_VoiceText_2025-2-10_12-56-35.mp3" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
         </div>
-        <div id="photoContainer" class="content-box">
-            <img src="https://i.pinimg.com/736x/2d/1e/6b/2d1e6ba1586163743a3a4b0ef232c98d.jpg" alt="Foto Especial" style="width: 100%; border-radius: 10px;">
+        <div class="piropo-card"><h3>💫 Piropo 2</h3><p>"Eres como un café en la mañana: ¡imposible de resistir!"</p>
+            <audio controls>
+                <source src="ttsMP3.com_VoiceText_2025-2-10_12-58-35.mp3" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
         </div>
-        <div id="messageContainer" class="content-box">
-            <p>💌 "Eres la persona más especial en mi vida, gracias por cada momento juntos. ¡Te amo!" 💕</p>
-        </div>
-        <div id="loveNotesContainer" class="content-box">
-            <p>"Cada día a tu lado es un capítulo más de nuestra hermosa historia de amor."</p>
-            <p>"Si el amor tuviera un nombre, llevaría el tuyo."</p>
-            <p>"Tu sonrisa ilumina mis días más oscuros. ¡Eres mi sol!"</p>
-        </div>
-        <div id="piroposContainer" class="content-box">
-            <div class="piropo-card"><h3>🌹 Piropo 1</h3><p>"Si la belleza fuera tiempo, tú serías la eternidad."</p>
-                <audio controls>
-                    <source src="ttsMP3.com_VoiceText_2025-2-10_12-56-35.mp3" type="audio/mpeg">
-                    Tu navegador no soporta el audio.
-                </audio>
-            </div>
-            <div class="piropo-card"><h3>💫 Piropo 2</h3><p>"Eres como un café en la mañana: ¡imposible de resistir!"</p>
-                <audio controls>
-                    <source src="ttsMP3.com_VoiceText_2025-2-10_12-58-35.mp3" type="audio/mpeg">
-                    Tu navegador no soporta el audio.
-                </audio>
-            </div>
-            <div class="piropo-card"><h3>🎨 Piropo 3</h3><p>"Deberías estar en un museo, porque eres una verdadera obra de arte."</p>
-                <audio controls>
-                    <source src="ttsMP3.com_VoiceText_2025-2-10_12-59-20.mp3" type="audio/mpeg">
-                    Tu navegador no soporta el audio.
-                </audio>
-            </div>
+        <div class="piropo-card"><h3>🎨 Piropo 3</h3><p>"Deberías estar en un museo, porque eres una verdadera obra de arte."</p>
+            <audio controls>
+                <source src="ttsMP3.com_VoiceText_2025-2-10_12-59-20.mp3" type="audio/mpeg">
+                Tu navegador no soporta el audio.
+            </audio>
         </div>
     </div>
+
     <script>
-<script>
+        function showContent(id) {
+            console.log("Mostrando:", id);  // Muestra en consola qué sección se intenta abrir
 
- <script>
- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Selecciona todos los botones dentro de la tarjeta
-        document.querySelectorAll(".card button").forEach(button => {
-            button.addEventListener("click", function () {
-                // Oculta todas las cajas de contenido
-                document.querySelectorAll(".content-box").forEach(box => {
-                    box.style.display = "none";
-                });
-
-                // Obtiene el ID del contenedor a mostrar
-                const targetId = this.getAttribute("onclick").match(/'(.*?)'/)?.[1];
-                const targetElement = document.getElementById(targetId);
-
-                // Si el elemento existe, lo muestra
-                if (targetElement) {
-                    targetElement.style.display = "block";
-                    console.log("✅ Mostrando:", targetId);
-                } else {
-                    console.error("❌ Error: No se encontró el elemento con ID:", targetId);
-                }
+            // Oculta todas las secciones
+            document.querySelectorAll(".content-box").forEach(box => {
+                box.style.display = "none";
             });
-        });
-    });
-</script>
 
-</script>
-
-
+            // Muestra la sección correspondiente si existe
+            const targetElement = document.getElementById(id);
+            if (targetElement) {
+                targetElement.style.display = "block";
+            } else {
+                console.error("❌ Error: No se encontró el elemento con ID:", id);
+            }
+        }
     </script>
+
 </body>
 </html>
+
 
 
 
