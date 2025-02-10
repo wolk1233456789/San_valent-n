@@ -122,24 +122,32 @@
     <script>
 <script>
 
-    function showContent(id) {
-        console.log("Mostrando:", id);  // Depuración en consola
-        // Ocultar todas las cajas de contenido
-        document.querySelectorAll('.content-box').forEach(box => {
-            box.style.display = 'none';
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Selecciona todos los botones
+        document.querySelectorAll("button").forEach(button => {
+            button.addEventListener("click", function () {
+                // Oculta todas las secciones
+                document.querySelectorAll(".content-box").forEach(box => {
+                    box.style.display = "none";
+                });
+
+                // Obtiene el ID del contenedor a mostrar
+                const targetId = this.getAttribute("onclick").match(/'(.*?)'/)[1];
+                const targetElement = document.getElementById(targetId);
+
+                // Muestra la sección correspondiente
+                if (targetElement) {
+                    targetElement.style.display = "block";
+                    console.log("Mostrando:", targetId);
+                } else {
+                    console.error("❌ Error: No se encontró el elemento con ID:", targetId);
+                }
+            });
         });
-
-        // Mostrar solo la que corresponde al botón presionado
-        const element = document.getElementById(id);
-        if (element) {
-            element.style.display = 'block';
-        } else {
-            console.log("❌ Error: Elemento no encontrado:", id);
-        }
-    }
-
-
+    });
 </script>
+
 
     </script>
 </body>
