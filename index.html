@@ -121,16 +121,24 @@
     </div>
     <script>
 <script>
+
     function showContent(id) {
-        console.log("Mostrando: ", id);  // Debugging
-        document.querySelectorAll('.content-box').forEach(box => box.style.display = 'none');
+        console.log("Mostrando:", id);  // Depuración en consola
+        // Ocultar todas las cajas de contenido
+        document.querySelectorAll('.content-box').forEach(box => {
+            box.style.display = 'none';
+        });
+
+        // Mostrar solo la que corresponde al botón presionado
         const element = document.getElementById(id);
         if (element) {
             element.style.display = 'block';
         } else {
-            console.log("Elemento no encontrado:", id);
+            console.log("❌ Error: Elemento no encontrado:", id);
         }
     }
+
+
 </script>
 
     </script>
