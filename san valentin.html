@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Interactiva de San Valentín</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffccd5;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 100%;
+            width: 400px;
+        }
+        .card h1 {
+            color: #d6336c;
+        }
+        .card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+        .card button {
+            padding: 12px;
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            font-size: 16px;
+        }
+        .card button:hover {
+            background-color: #a61d52;
+        }
+        #videoContainer, #photoContainer, #messageContainer, #loveNotesContainer, #piroposContainer {
+            display: none;
+            margin-top: 15px;
+        }
+        .content-box {
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 10px;
+            font-style: italic;
+            color: darkred;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .piropo-card h3 {
+            color: #d6336c;
+            margin-bottom: 5px;
+        }
+        audio {
+            margin-top: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>💖 ¡Feliz San Valentín! 💖</h1>
+        <p>Haz clic en los botones para ver tus sorpresas especiales.</p>
+        <img src="https://i.pinimg.com/736x/47/f4/33/47f4332432ed0d21c43e5e4e0f1061d5.jpg" alt="Foto Especial" id="profilePic">
+        <br>
+        
+        <button onclick="showContent('photoContainer')">Ver Foto 📸</button>
+        <button onclick="showContent('messageContainer')">Ver Mensaje 💌</button>
+        <button onclick="showContent('loveNotesContainer')">Ver Cartitas 💕</button>
+        <button onclick="showContent('piroposContainer')">Escuchar Piropos 😍</button>
+        
+        
+        </div>
+        <div id="photoContainer" class="content-box">
+            <img src="https://i.pinimg.com/736x/2d/1e/6b/2d1e6ba1586163743a3a4b0ef232c98d.jpg" alt="Foto Especial" style="width: 100%; border-radius: 10px;">
+        </div>
+        <div id="messageContainer" class="content-box">
+            <p>💌 "Eres la persona más especial en mi vida, gracias por cada momento juntos. ¡Te amo!" 💕</p>
+        </div>
+        <div id="loveNotesContainer" class="content-box">
+            <p>"Cada día a tu lado es un capítulo más de nuestra hermosa historia de amor."</p>
+            <p>"Si el amor tuviera un nombre, llevaría el tuyo."</p>
+            <p>"Tu sonrisa ilumina mis días más oscuros. ¡Eres mi sol!"</p>
+        </div>
+        <div id="piroposContainer" class="content-box">
+            <div class="piropo-card"><h3>🌹 Piropo 1</h3><p>"Si la belleza fuera tiempo, tú serías la eternidad."</p>
+                <audio controls>
+                    <source src="ttsMP3.com_VoiceText_2025-2-10_12-56-35.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el audio.
+                </audio>
+            </div>
+            <div class="piropo-card"><h3>💫 Piropo 2</h3><p>"Eres como un café en la mañana: ¡imposible de resistir!"</p>
+                <audio controls>
+                    <source src="ttsMP3.com_VoiceText_2025-2-10_12-58-35.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el audio.
+                </audio>
+            </div>
+            <div class="piropo-card"><h3>🎨 Piropo 3</h3><p>"Deberías estar en un museo, porque eres una verdadera obra de arte."</p>
+                <audio controls>
+                    <source src="ttsMP3.com_VoiceText_2025-2-10_12-59-20.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el audio.
+                </audio>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showContent(id) {
+            const sections = ['videoContainer', 'photoContainer', 'messageContainer', 'loveNotesContainer', 'piroposContainer'];
+            sections.forEach(section => {
+                document.getElementById(section).style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
+
+
